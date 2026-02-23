@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV – Abolaji Abimbola Afolake | Professional Caterer & Certified Caregiver</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #000080;
+      --navy-dark: #000060;
+      --gold: #D4AF37;
+      --gold-light: #e8c84a;
+      --charcoal: #36454F;
+      --ivory: #F8F5F0;
+      --white: #ffffff;
+      --text-mid: #36454F;
+      --text-light: #6b7280;
+      --light-grey: #E5E5E5;
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: #d0d0d0;
+      min-height: 100vh;
+      color: var(--charcoal);
+    }
+
+    /* ---- PRINT CONTROLS ---- */
+    .print-bar {
+      background: var(--navy);
+      padding: 14px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .print-bar p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.85rem;
+    }
+
+    .print-bar p span { color: var(--gold); font-weight: 600; }
+
+    .print-actions { display: flex; gap: 12px; }
+
+    .btn-print {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      border: none;
+      font-family: 'Jost', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 10px 24px;
+      border-radius: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.3s ease;
+    }
+
+    .btn-print:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212,175,55,0.4);
+    }
+
+    .btn-back {
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.2);
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      font-size: 0.88rem;
+      padding: 10px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background: rgba(255,255,255,0.2);
+      color: var(--white);
+    }
+
+    /* ---- CV WRAPPER ---- */
+    .cv-wrapper {
+      max-width: 900px;
+      margin: 32px auto;
+      background: var(--white);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
+
+    /* ---- CV HEADER ---- */
+    .cv-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      padding: 48px 52px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 36px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cv-header::before {
+      content: '';
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 250px;
+      height: 250px;
+      border: 40px solid rgba(212,175,55,0.08);
+      border-radius: 50%;
+    }
+
+    .cv-header::after {
+      content: '';
+      position: absolute;
+      right: 40px;
+      bottom: -80px;
+      width: 180px;
+      height: 180px;
+      border: 30px solid rgba(212,175,55,0.05);
+      border-radius: 50%;
+    }
+
+    .cv-photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--gold);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      flex-shrink: 0;
+    }
+
+    .cv-photo-placeholder {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(212,175,55,0.4));
+      border: 4px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .cv-header-text { position: relative; z-index: 1; }
+
+    .cv-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .cv-title {
+      font-size: 0.95rem;
+      color: var(--gold);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .cv-contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .cv-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .cv-contact-item span { font-size: 0.9rem; }
+
+    /* ---- CV BODY ---- */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 0;
+    }
+
+    .cv-main {
+      padding: 40px 44px 40px 52px;
+      border-right: 1px solid var(--light-grey);
+    }
+
+    .cv-sidebar {
+      padding: 40px 36px 40px 36px;
+      background: var(--ivory);
+    }
+
+    /* ---- CV SECTIONS ---- */
+    .cv-section {
+      margin-bottom: 34px;
+    }
+
+    .cv-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .cv-section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .cv-section-title::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    /* Profile */
+    .cv-profile {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+    }
+
+    /* Experience */
+    .exp-entry {
+      margin-bottom: 22px;
+      padding-bottom: 22px;
+      border-bottom: 1px dashed var(--light-grey);
+    }
+
+    .exp-entry:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .exp-role {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+
+    .exp-company {
+      font-size: 0.88rem;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .exp-dates {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .exp-duties {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-duties li {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .exp-duties li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.7rem;
+      top: 2px;
+    }
+
+    /* Skills sidebar */
+    .skill-group {
+      margin-bottom: 18px;
+    }
+
+    .skill-group-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-tag {
+      background: rgba(0,0,128,0.07);
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 50px;
+      border: 1px solid rgba(0,0,128,0.12);
+    }
+
+    .skill-bar-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .skill-bar-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .skill-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-mid);
+    }
+
+    .skill-bar-label span:last-child {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .skill-bar-track {
+      height: 5px;
+      background: var(--light-grey);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--navy), var(--gold));
+      border-radius: 10px;
+    }
+
+    /* Certifications */
+    .cert-entry {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      background: rgba(0,0,128,0.04);
+      border-radius: 8px;
+      padding: 10px 12px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .cert-entry-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .cert-entry-text {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.4;
+    }
+
+    .cert-entry-text strong {
+      display: block;
+      color: var(--navy);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    /* Education */
+    .edu-entry {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .edu-icon-box {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--navy), #0000a8);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .edu-details h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+
+    .edu-details p {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* Reference */
+    .ref-card {
+      background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+      border-radius: 10px;
+      padding: 16px;
+      color: var(--white);
+    }
+
+    .ref-card-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .ref-card-detail {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Availability */
+    .availability-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .availability-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.83rem;
+      color: var(--text-mid);
+    }
+
+    .avail-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Values */
+    .values-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .value-badge {
+      background: linear-gradient(135deg, var(--navy), #0000a8);
+      color: var(--gold);
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 50px;
+    }
+
+    /* ---- FOOTER ---- */
+    .cv-footer {
+      background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+      padding: 20px 52px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cv-footer p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .cv-footer span {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* ---- PRINT STYLES ---- */
+    @media print {
+      body { background: white; }
+      .print-bar { display: none; }
+      .cv-wrapper {
+        max-width: 100%;
+        margin: 0;
+        box-shadow: none;
+      }
+      .cv-header { padding: 36px 44px; }
+      .cv-main { padding: 28px 36px 28px 44px; }
+      .cv-sidebar { padding: 28px 28px 28px 28px; }
+    }
+
+    @media (max-width: 768px) {
+      .cv-header {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 36px 28px;
+        gap: 24px;
+      }
+
+      .cv-photo, .cv-photo-placeholder {
+        margin: 0 auto;
+      }
+
+      .cv-contact-row { justify-content: center; }
+
+      .cv-body { grid-template-columns: 1fr; }
+
+      .cv-main {
+        padding: 28px 24px;
+        border-right: none;
+        border-bottom: 1px solid var(--light-grey);
+      }
+
+      .cv-sidebar { padding: 28px 24px; background: var(--ivory); }
+
+      .cv-footer { padding: 16px 24px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Print Bar -->
+  <div class="print-bar">
+    <p>Viewing CV for <span>Abolaji Abimbola Afolake</span> · Professional Caterer & Certified Caregiver</p>
+    <div class="print-actions">
+      <a href="index.html" class="btn-back">← Back to Portfolio</a>
+      <button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    </div>
+  </div>
+
+  <!-- CV Document -->
+  <div class="cv-wrapper">
+
+    <!-- HEADER -->
+    <div class="cv-header">
+      <div class="cv-photo-placeholder" role="img" aria-label="Profile photo placeholder">AA</div>
+      <!-- Replace above with: <img class="cv-photo" src="images/profile.jpg" alt="Abolaji Abimbola Afolake"/> -->
+      <div class="cv-header-text">
+        <h1 class="cv-name">Abolaji Abimbola Afolake</h1>
+        <p class="cv-title">Professional Caterer · Certified Caregiver</p>
+        <div class="cv-contact-row">
+          <div class="cv-contact-item">
+            <span>📍</span>
+            <span>Igando, Lagos State, Nigeria</span>
+          </div>
+          <div class="cv-contact-item">
+            <span>📞</span>
+            <span>08163750703</span>
+          </div>
+          <div class="cv-contact-item">
+            <span>💬</span>
+            <span>WhatsApp: 08178009472</span>
+          </div>
+          <div class="cv-contact-item">
+            <span>✉️</span>
+            <span>afolakeabimbola@gmail.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="cv-body">
+
+      <!-- MAIN COLUMN -->
+      <div class="cv-main">
+
+        <!-- Professional Profile -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Professional Profile</h2>
+          <p class="cv-profile">
+            Dedicated and highly experienced Professional Caterer and Certified Caregiver with over 7 years in the catering industry and 3 years in professional healthcare support. Passionate about delivering nourishment, comfort, and dignity to individuals and families across Lagos. Known for exceptional attention to detail, flawless hygiene standards, and an unwavering commitment to client satisfaction. Equally skilled in preparing authentic Nigerian cuisine for large-scale events and providing compassionate, certified medical support in residential and clinical care settings.
+          </p>
+        </div>
+
+        <!-- Catering Experience -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Catering Experience</h2>
+
+          <div class="exp-entry">
+            <p class="exp-role">Freelance Professional Caterer</p>
+            <p class="exp-company">Self-Employed · Lagos, Nigeria</p>
+            <p class="exp-dates">2017 – Present · 7+ Years</p>
+            <ul class="exp-duties">
+              <li>Planned and executed full-service catering for weddings, corporate events, birthday parties, and private gatherings across Lagos.</li>
+              <li>Prepared and presented authentic Nigerian cuisine including Jollof Rice, Amala, Egusi, Pounded Yam, Ofada Rice, Banga Soup, and Afang Soup.</li>
+              <li>Developed custom event menus tailored to client dietary needs, preferences, and cultural requirements.</li>
+              <li>Managed small chops packages, pastry production, and cake creation for various celebrations.</li>
+              <li>Maintained strict food safety and hygiene protocols consistently throughout all engagements.</li>
+              <li>Coordinated food delivery and meal planning services for individual and family clients.</li>
+              <li>Handled events of 20 to 200+ guests independently and with support teams.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Caregiving Experience -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Caregiving Experience</h2>
+
+          <div class="exp-entry">
+            <p class="exp-role">Professional Caregiver</p>
+            <p class="exp-company">Poget Care Homes Foundation · Lagos, Nigeria</p>
+            <p class="exp-dates">2021 – 2024 · 3 Years</p>
+            <ul class="exp-duties">
+              <li>Provided comprehensive care for individuals with physical and neurological disabilities in a residential care setting.</li>
+              <li>Assisted patients with activities of daily living including bathing, dressing, feeding, and mobility support.</li>
+              <li>Monitored and recorded vital signs including blood pressure, blood sugar levels, and respiratory rates.</li>
+              <li>Administered prescribed medications under nurse supervision and maintained accurate patient records.</li>
+              <li>Provided emotional support and companionship, significantly improving resident wellbeing outcomes.</li>
+              <li>Collaborated with medical staff, physiotherapists, and families to implement individualized care plans.</li>
+              <li>Maintained a clean, hygienic, and safe care environment at all times.</li>
+            </ul>
+          </div>
+
+          <div class="exp-entry">
+            <p class="exp-role">Private Home Caregiver</p>
+            <p class="exp-company">Various Private Clients · Lagos, Nigeria</p>
+            <p class="exp-dates">2021 – Present · Ongoing</p>
+            <ul class="exp-duties">
+              <li>Delivered live-in and live-out care to elderly patients and post-surgery recovery clients in Ikeja, Lekki, Surulere, and Victoria Island.</li>
+              <li>Prepared specialized therapeutic diets (low-sodium, diabetic-friendly) alongside caregiving duties.</li>
+              <li>Provided overnight care shifts for patients requiring 24-hour monitoring.</li>
+              <li>Offered child care services with structured activities and consistent supervision.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Notable Achievements -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Notable Achievements</h2>
+          <ul class="exp-duties">
+            <li>Successfully catered premium buffet events serving 150+ guests with zero complaints on food quality or service.</li>
+            <li>Developed a loyal client base through repeat business and strong referrals across Lagos.</li>
+            <li>Completed full CPR and First Aid certification, enabling integrated care and emergency response capability.</li>
+            <li>Contributed to measurable improvement in patient recovery outcomes through attentive post-surgery care.</li>
+            <li>Recognized for outstanding patient rapport and compassionate service at Poget Care Homes Foundation.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="cv-sidebar">
+
+        <!-- Key Skills -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Catering Skills</h2>
+          <div class="skill-group">
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>Nigerian Cuisine</span><span>Expert</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width:97%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>Event Catering</span><span>Expert</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>Meal Planning</span><span>Advanced</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>Small Chops & Pastries</span><span>Advanced</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>Cake Making</span><span>Proficient</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width:82%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>Food Safety & Hygiene</span><span>Certified</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Caregiving Skills -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Care Skills</h2>
+          <div class="skill-group">
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>Elderly & Patient Care</span><span>Expert</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width:94%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>Blood Pressure Monitoring</span><span>Certified</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>Blood Sugar Monitoring</span><span>Certified</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>CPR</span><span>Certified</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-label"><span>First Aid</span><span>Certified</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Skills -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Soft Skills</h2>
+          <div class="skill-tags">
+            <span class="skill-tag">Communication</span>
+            <span class="skill-tag">Empathy</span>
+            <span class="skill-tag">Reliability</span>
+            <span class="skill-tag">Punctuality</span>
+            <span class="skill-tag">Organization</span>
+            <span class="skill-tag">Attention to Detail</span>
+            <span class="skill-tag">Team Collaboration</span>
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Patience</span>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Certifications</h2>
+          <div class="cert-entry">
+            <span class="cert-entry-icon">🏅</span>
+            <div class="cert-entry-text">
+              <strong>Certified Caregiver</strong>
+              Professional Caregiving Certification
+            </div>
+          </div>
+          <div class="cert-entry">
+            <span class="cert-entry-icon">❤️</span>
+            <div class="cert-entry-text">
+              <strong>First Aid Certification</strong>
+              Emergency Response & First Aid
+            </div>
+          </div>
+          <div class="cert-entry">
+            <span class="cert-entry-icon">🫀</span>
+            <div class="cert-entry-text">
+              <strong>CPR Certification</strong>
+              Cardiopulmonary Resuscitation
+            </div>
+          </div>
+          <div class="cert-entry">
+            <span class="cert-entry-icon">🍴</span>
+            <div class="cert-entry-text">
+              <strong>Food Safety & Hygiene</strong>
+              Food Safety & Hygiene Certification
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Education</h2>
+          <div class="edu-entry">
+            <div class="edu-icon-box">🎓</div>
+            <div class="edu-details">
+              <h4>Ordinary National Diploma (OND)</h4>
+              <p>Nigeria</p>
+              <p style="margin-top:4px; font-size:0.78rem; color:#9ca3af;">Complemented by extensive professional training and industry certifications.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Availability -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Availability</h2>
+          <div class="availability-list">
+            <div class="availability-item"><span class="avail-dot"></span>Live-in Care</div>
+            <div class="availability-item"><span class="avail-dot"></span>Live-out Care</div>
+            <div class="availability-item"><span class="avail-dot"></span>Event-based Catering</div>
+            <div class="availability-item"><span class="avail-dot"></span>Overnight Shifts</div>
+            <div class="availability-item"><span class="avail-dot"></span>Willing to Travel</div>
+          </div>
+        </div>
+
+        <!-- Core Values -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Core Values</h2>
+          <div class="values-list">
+            <span class="value-badge">Trust</span>
+            <span class="value-badge">Cleanliness</span>
+            <span class="value-badge">Patience</span>
+            <span class="value-badge">Timeliness</span>
+            <span class="value-badge">Professionalism</span>
+            <span class="value-badge">Communication</span>
+          </div>
+        </div>
+
+        <!-- Reference -->
+        <div class="cv-section">
+          <h2 class="cv-section-title">Reference</h2>
+          <div class="ref-card">
+            <p class="ref-card-name">Abidemi Adekola</p>
+            <p class="ref-card-detail">📞 08069104067</p>
+            <p class="ref-card-detail" style="margin-top:4px; font-size:0.75rem; opacity:0.65;">Available upon request for professional verification</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="cv-footer">
+      <p>Abolaji Abimbola Afolake · <span>Professional Caterer & Certified Caregiver</span> · Igando, Lagos, Nigeria</p>
+      <p>📞 08163750703 · ✉️ afolakeabimbola@gmail.com</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
